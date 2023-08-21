@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lesson_6_2</string>
+
+    <string name="label_main">Task Manager</string>
+    <string name="label_add_task">Task</string>
+    <string name="label_update_task">Task Update</string>
+</resources>
