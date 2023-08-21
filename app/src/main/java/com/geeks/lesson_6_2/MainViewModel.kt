@@ -4,22 +4,15 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.geeks.lesson_6_2.data.db.TaskDao
 import com.geeks.lesson_6_2.data.model.Task
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
-@HiltViewModel
-class MainViewModel @Inject constructor(
-    private val dao: TaskDao
-) : ViewModel() {
+class MainViewModel : ViewModel() {
 
+    private val dao = App.db.taskDao()
 
     private var tasks = dao.getAll().toMutableList()
     private var _list = MutableLiveData(tasks)
-//    private var _listTRUE = MutableLiveData(tasks)
     val list: LiveData<MutableList<Task>> = _list
-//    val listTR: LiveData<MutableList<Task>> = _listTRUE
 
     fun getTasks() {
         tasks = dao.getAll().toMutableList()

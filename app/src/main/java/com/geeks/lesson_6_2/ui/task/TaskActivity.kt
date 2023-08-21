@@ -8,9 +8,7 @@ import com.geeks.lesson_6_2.R
 import com.geeks.lesson_6_2.data.model.Task
 import com.geeks.lesson_6_2.databinding.ActivityTaskBinding
 import com.geeks.lesson_6_2.ui.main.MainActivity
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class TaskActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityTaskBinding

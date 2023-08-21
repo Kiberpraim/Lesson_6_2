@@ -1,7 +1,21 @@
 package com.geeks.lesson_6_2
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
+import androidx.room.Room
+import com.geeks.lesson_6_2.data.db.AppDatabase
 
-@HiltAndroidApp
-class App : Application()
+class App : Application(){
+
+    override fun onCreate() {
+        super.onCreate()
+        db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, "Task-file"
+        ).allowMainThreadQueries().build()
+    }
+
+    companion object {
+        lateinit var db: AppDatabase
+    }
+
+}

@@ -14,9 +14,7 @@ import com.geeks.lesson_6_2.MainViewModel
 import com.geeks.lesson_6_2.databinding.ActivityMainBinding
 import com.geeks.lesson_6_2.data.model.Task
 import com.geeks.lesson_6_2.ui.task.TaskActivity
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

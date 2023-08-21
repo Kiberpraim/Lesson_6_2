@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
 
     kotlin("kapt")
-    id("com.google.dagger.hilt.android")
+//    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -52,8 +52,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //Dagger Hilt (Dependency injection)
-    implementation("com.google.dagger:hilt-android:2.47")
-    kapt("com.google.dagger:hilt-android-compiler:2.47")
+//    implementation("com.google.dagger:hilt-android:2.47")
+//    kapt("com.google.dagger:hilt-android-compiler:2.47")
 
     // Room (Local database)
     val roomVersion = "2.5.2"
