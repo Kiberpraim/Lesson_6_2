@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="4dp"
+    android:layout_margin="@dimen/_4dp"
     xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="@dimen/_24sp"
         tools:text="Title"
         android:maxLines="1"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/_8dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/tv_description"/>
@@ -23,11 +23,11 @@
         android:id="@+id/tv_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textSize="20sp"
+        android:layout_marginTop="@dimen/_4dp"
+        android:textSize="@dimen/_20sp"
         tools:text="Description"
         android:maxLines="2"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/_8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
         app:layout_constraintBottom_toBottomOf="parent"/>
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/_8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

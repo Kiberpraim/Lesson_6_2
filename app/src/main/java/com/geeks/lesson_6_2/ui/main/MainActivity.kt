@@ -5,7 +5,6 @@ import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -55,21 +54,20 @@ class MainActivity : AppCompatActivity() {
             binding.recyclerView.adapter = adapter
 
             adapter.setList(updatedList)
-            Log.e("kiber", "observe -> $updatedList")
         }
     }
 
     private fun onLongClickTask(task: Task) { // deleteTaskClick
         val dialogBuilder = AlertDialog.Builder(this)
-        dialogBuilder.setTitle("Вы хотите удалить данные?")
-            .setMessage("Востановить данные бедет невозможным!")
-            .setPositiveButton("ОК") { dialog: DialogInterface, _: Int ->
+        dialogBuilder.setTitle(getString(com.geeks.lesson_6_2.R.string.are_you_wont_delete))
+            .setMessage(getString(com.geeks.lesson_6_2.R.string.alertdialog_message))
+            .setPositiveButton(getString(com.geeks.lesson_6_2.R.string.ok)) { dialog: DialogInterface, _: Int ->
                 // Обработка нажатия кнопки "OK"
                 viewModel.deleteTask(task)
                 adapter.delete(task)
                 dialog.dismiss()
             }
-            .setNegativeButton("Отмена") { dialog: DialogInterface, _: Int ->
+            .setNegativeButton(getString(com.geeks.lesson_6_2.R.string.cancel)) { dialog: DialogInterface, _: Int ->
                 // Обработка нажатия кнопки "Отмена"
                 dialog.dismiss()
             }
@@ -87,7 +85,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initSpinner() {
-        val taskFilterList = arrayOf("Все задачи", "Невыполненные", "Выполненные")
+        val taskFilterList = arrayOf(getString(com.geeks.lesson_6_2.R.string.all_task),
+            getString(com.geeks.lesson_6_2.R.string.false_task),
+            getString(com.geeks.lesson_6_2.R.string.true_task))
 
         val adapterSpinner = ArrayAdapter(this, R.layout.simple_spinner_item, taskFilterList)
         adapterSpinner.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
@@ -105,9 +105,9 @@ class MainActivity : AppCompatActivity() {
 
                 // Здесь вы можете выполнить действия на основе выбранного элемента
                 when (taskFilterList[position]) {
-                    "Все задачи" -> viewModel.getTasks()
-                    "Невыполненные" -> viewModel.filterTasksFalse()
-                    "Выполненные" -> viewModel.filterTasksTrue()
+                    getString(com.geeks.lesson_6_2.R.string.all_task) -> viewModel.getTasks()
+                    getString(com.geeks.lesson_6_2.R.string.false_task) -> viewModel.filterTasksFalse()
+                    getString(com.geeks.lesson_6_2.R.string.true_task) -> viewModel.filterTasksTrue()
                 }
             }
 

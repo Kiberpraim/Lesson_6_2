@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.geeks.lesson_6_2.MainViewModel
+import com.geeks.lesson_6_2.R
 import com.geeks.lesson_6_2.data.model.Task
 import com.geeks.lesson_6_2.databinding.ActivityTaskBinding
 import com.geeks.lesson_6_2.ui.main.MainActivity
@@ -51,7 +52,7 @@ class TaskActivity : AppCompatActivity() {
         with(binding) {
             etTitle.setText(task?.title)
             etDescription.setText(task?.description)
-            btnSave.text = "Update"
+            btnSave.text = getString(R.string.update)
 
             btnSave.setOnClickListener {
 
