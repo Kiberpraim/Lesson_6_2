@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initClick() {
-        binding.fab.setOnClickListener {
+        binding.btnTask.setOnClickListener {
             val intent = Intent(this, TaskActivity::class.java)
             startActivity(intent)
         }

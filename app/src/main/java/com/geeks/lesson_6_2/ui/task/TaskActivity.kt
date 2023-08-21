@@ -25,7 +25,7 @@ class TaskActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
-        task = intent.getSerializableExtra(MainActivity.UPDATE_TASK_KEY) as Task
+        task = intent.getSerializableExtra(MainActivity.UPDATE_TASK_KEY) as Task?
 
         if (task == null){
             createTask()

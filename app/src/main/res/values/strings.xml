@@ -12,4 +12,5 @@
     <string name="all_task">Все задачи</string>
     <string name="false_task">Невыполненные</string>
     <string name="true_task">Выполненные</string>
+    <string name="create_task">Create Task</string>
 </resources>
